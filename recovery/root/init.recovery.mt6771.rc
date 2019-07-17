@@ -1,0 +1,17 @@
+on init
+    export ANDROID_ROOT /system_root
+    # export PATH /system_root/system/bin:/system_root/system/bin/hw:/vendor/bin:/vendor/bin/hw:/sbin
+    # export LD_LIBRARY_PATH /system_root/system/lib64:/system_root/system/lib64/vndk-28:/vendor/lib64:/vendor/lib64/hw:/sbin
+    # mount ext4 /dev/block/platform/bootdevice/by-name/vendor    /vendor
+    # mount ext4 /dev/block/platform/bootdevice/by-name/system    /system_root
+    # mount ext4 /dev/block/platform/bootdevice/by-name/protect1  /mnt/vendor/protect_f
+    # mount ext4 /dev/block/platform/bootdevice/by-name/protect2  /mnt/vendor/protect_s
+    # mount ext4 /dev/block/platform/bootdevice/by-name/nvdata    /mnt/vendor/nvdata
+    # mount ext4 /dev/block/platform/bootdevice/by-name/nvcfg     /mnt/vendor/nvcfg
+    # mount ext4 /dev/block/platform/bootdevice/by-name/persist   /mnt/vendor/persist
+    # import /vendor/etc/init/hw/init.mt6771.rc
+
+on property:ro.mtk_emmc_support=1
+    # Support A/B feature for emmc boot region
+    symlink /dev/block/mmcblk0boot0 /dev/block/platform/bootdevice/by-name/preloader_a
+    symlink /dev/block/mmcblk0boot1 /dev/block/platform/bootdevice/by-name/preloader_b

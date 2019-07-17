@@ -1,0 +1,47 @@
+#Mount point    FStype  Device                                              Flags
+/data           f2fs    /dev/block/platform/bootdevice/by-name/userdata     flags=encryptable=/dev/block/platform/bootdevice/by-name/metadata
+/cache          ext4    /dev/block/platform/bootdevice/by-name/cache        flags=backup;wipeingui;wipeduringfactoryreset
+/system_root    ext4    /dev/block/platform/bootdevice/by-name/system       flags=backup;wipeingui
+/system_image   emmc    /dev/block/platform/bootdevice/by-name/system       flags=display="System";backup;flashimg
+/boot           emmc    /dev/block/platform/bootdevice/by-name/boot         flags=backup;flashimg
+/recovery       emmc    /dev/block/platform/bootdevice/by-name/recovery     flags=backup;flashimg
+/bootloader     emmc    /dev/block/platform/bootdevice/by-name/lk           flags=display="bootloader";backup;flashimg
+/bootloader2    emmc    /dev/block/platform/bootdevice/by-name/lk2          flags=display="bootloader2";backup;flashimg
+/vendor         ext4    /dev/block/platform/bootdevice/by-name/vendor       flags=display="Vendor";backup;wipeingui
+/vendor_image   emmc    /dev/block/platform/bootdevice/by-name/vendor       flags=display="Vendor_image";flashimg;backup
+
+/mnt/vendor/protect_f   ext4    /dev/block/platform/bootdevice/by-name/protect1     flags=display="Protect_F";formattable;symlink=/protect_f
+/mnt/vendor/protect_s   ext4    /dev/block/platform/bootdevice/by-name/protect2     flags=display="Protect_S";formattable;symlink=/protect_s
+/mnt/vendor/nvdata      ext4    /dev/block/platform/bootdevice/by-name/nvdata       flags=display="NvData";formattable;symlink=/nvdata
+/mnt/vendor/nvcfg       ext4    /dev/block/platform/bootdevice/by-name/nvcfg        flags=display="Nvcfg";formattable;symlink=nvcfg
+/mnt/vendor/persist     ext4    /dev/block/platform/bootdevice/by-name/persist      flags=display="Persist";formattable;symlink=/persist
+
+/persistent     emmc    /dev/block/platform/bootdevice/by-name/frp
+/metadata       emmc    /dev/block/platform/bootdevice/by-name/metadata
+/misc           emmc    /dev/block/platform/bootdevice/by-name/para
+/logo           emmc    /dev/block/platform/bootdevice/by-name/logo         flags=display="LOGO";backup;flashimg
+/tee1           emmc    /dev/block/platform/bootdevice/by-name/tee1         flags=display="Tee1";backup;flashimg
+/tee2           emmc    /dev/block/platform/bootdevice/by-name/tee2         flags=display="Tee2";backup;flashimg
+/expdb          emmc    /dev/block/platform/bootdevice/by-name/expdb
+/nvram          emmc    /dev/block/platform/bootdevice/by-name/nvram        flags=display="NvRAM";backup;flashimg
+/proinfo        emmc    /dev/block/platform/bootdevice/by-name/proinfo
+/seccfg         emmc    /dev/block/platform/bootdevice/by-name/seccfg
+/scp1           emmc    /dev/block/platform/bootdevice/by-name/scp1         flags=display="SCP1";backup;flashimg
+/scp2           emmc    /dev/block/platform/bootdevice/by-name/scp2         flags=display="SCP2";backup;flashimg
+/sspm_1         emmc    /dev/block/platform/bootdevice/by-name/sspm_1       flags=display="SSPM";backup;flashimg
+/sspm_2         emmc    /dev/block/platform/bootdevice/by-name/sspm_2       flags=display="SSPM_2";backup;flashimg
+/md1img         emmc    /dev/block/platform/bootdevice/by-name/md1img       flags=display="md1rom";backup;flashimg
+/md1dsp         emmc    /dev/block/platform/bootdevice/by-name/md1dsp       flags=display="md1dsp";backup;flashimg
+/cam_vpu1       emmc    /dev/block/platform/bootdevice/by-name/cam_vpu1     flags=display="cam_vpu1";backup;flashimg
+/cam_vpu2       emmc    /dev/block/platform/bootdevice/by-name/cam_vpu2     flags=display="cam_vpu2";backup;flashimg
+/cam_vpu3       emmc    /dev/block/platform/bootdevice/by-name/cam_vpu3     flags=display="cam_vpu2";backup;flashimg
+/gz1            emmc    /dev/block/platform/bootdevice/by-name/gz1
+/gz2            emmc    /dev/block/platform/bootdevice/by-name/gz2
+/spmfw          emmc    /dev/block/platform/bootdevice/by-name/spmfw        flags=display="SPM FIRMWARE";backup;flashimg
+/boot_para      emmc    /dev/block/platform/bootdevice/by-name/boot_para
+/odmdtbo        emmc    /dev/block/platform/bootdevice/by-name/odmdtbo
+/dtbo           emmc    /dev/block/platform/bootdevice/by-name/dtbo         flags=display="DTBO";backup;flashimg
+/otp            emmc    /dev/block/platform/bootdevice/by-name/otp
+
+/external_sd    vfat    /dev/block/mmcblk1p1 /dev/block/mmcblk1             flags=display="External SDCard";storage;wipeingui;removable
+/usb-otg        auto    /dev/block/sda1 /dev/block/sda                      flags=backup=0;storage;removable
